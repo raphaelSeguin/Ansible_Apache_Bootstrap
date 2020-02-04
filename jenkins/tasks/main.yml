@@ -1,0 +1,30 @@
+---
+# tasks file for jenkins
+
+# install jdk 8
+
+#- name: Download JDK 8
+#  get_url:
+#    url: http://download.oracle.com/otn-pub/java/jdk/8u65-b17/jdk-8u65-linux-x64.tar.gz
+#    dest: /var/
+
+- name: install jdk 8
+  yum:
+    name: java-1.8.0-openjdk
+    state: present
+
+# download Jenkins
+
+- name: Download Jenkins
+  get_url:
+    url: https://jenkins.io/download/jenkins.war
+    dest: /var/
+
+# create a service
+
+
+
+
+
+
+# enable service (=> handler)

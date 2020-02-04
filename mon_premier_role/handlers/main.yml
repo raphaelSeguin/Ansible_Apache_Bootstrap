@@ -6,3 +6,6 @@
     name: httpd
     state: started
   listen: restart httpd
+- name: test netstat
+  command: netstat
+  listen: test netstat

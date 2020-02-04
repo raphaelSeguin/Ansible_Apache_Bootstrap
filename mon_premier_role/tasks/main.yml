@@ -5,4 +5,7 @@
     name: httpd
     state: present
   notify: restart httpd
-
+- name: install
+  yum:
+    name: net-tools
+    state: present
