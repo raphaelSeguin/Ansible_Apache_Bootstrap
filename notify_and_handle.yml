@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: tache comportant un notify
+    command:
+      cmd: cat /etc/passwd
+      register: pouet
+    notify: say hello
+  handlers:
+  - name: log result
+    debug:
+      msg: "hello"
+    listen: "say hello"

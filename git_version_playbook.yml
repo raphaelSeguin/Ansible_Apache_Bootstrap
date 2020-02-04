@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: git version
+    command: git --version
+    register: gitversion
+  - name: display
+    debug:
+      msg: Version de git {{ gitversion.stdout_lines[0] }}

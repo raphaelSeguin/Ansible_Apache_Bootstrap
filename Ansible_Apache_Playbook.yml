@@ -1,0 +1,45 @@
+--- # Apache webserver Bootstrap
+- hosts: localhost
+  become: yes
+  vars:
+    port: 8090
+#  handlers:
+#  - name: myhandler
+#    service: 
+#      name: memcached
+#      state: restarted
+  tasks:
+  - name: install httpd
+    yum:
+      name: httpd
+      state: latest
+  - name: create directory
+    file:
+      path: /var/www/html/
+      state: touch 
+  - name: create file
+    file:
+      path: /var/www/html/index.html
+      state: touch
+  - name: write inside index.html
+    lineinfile:
+      line: "<h1>Welcome to ... </h1>"
+      path: /var/www/html/index.html
+#  - name: change Apache Port
+#    lineinfile:
+#      line: Listen 8080
+#      path: /etc/httpd/conf/httpd.conf 
+#      regexp: '^Listen'
+  -name:
+    template:
+      src: template.j2
+      dest: /etc/httpd/conf/httpd.conf
+    notify:
+      - restart memcached
+      - restart apache
+
+
+#  - name: start httpd
+#    service:
+#      name: httpd
+#      state: started

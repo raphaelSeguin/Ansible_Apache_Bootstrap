@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  become: yes
+  vars:
+    port: 8088
+  tasks:
+  - name: templating
+    template:
+      src: template.j2
+      dest: /etc/httpd/conf/httpd.conf

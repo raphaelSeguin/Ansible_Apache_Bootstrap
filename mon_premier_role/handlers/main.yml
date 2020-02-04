@@ -1,0 +1,8 @@
+---
+# handlers file for mon_premier_role
+
+- name: mon handler
+  service:
+    name: httpd
+    state: started
+  listen: restart httpd

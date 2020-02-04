@@ -1,0 +1,8 @@
+---
+# tasks file for mon_premier_role
+- name: install apache
+  yum:
+    name: httpd
+    state: present
+  notify: restart httpd
+
