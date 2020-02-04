@@ -1,0 +1,13 @@
+{# template for systemd service file #}
+
+[Unit]
+Description={{ description }}
+After={{ after }}
+
+[Service]
+Environment={{ environment }}
+Type={{ type }}
+ExecStart={{ exec_start }}
+User={{ user }}
+[Install]
+WantedBy={{ wanted_by }}

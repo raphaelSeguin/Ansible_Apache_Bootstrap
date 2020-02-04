@@ -23,6 +23,17 @@ Requirements
     systemctl status jenkins.service
     systemctl enable jenkins.service
 
+[Unit]
+Description=Jenkins Daemon
+After=network.target
+[Service]
+Type=simple
+Environment="JENKINS_HOME=/data/jenkins"
+ExecStart=/usr/bin/java -jar /usr/lib/jenkins/jenkins.war
+User=jenkins
+[Install]
+WantedBy=multi-user.target
+
 Role Variables
 --------------
 
