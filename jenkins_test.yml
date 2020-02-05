@@ -1,0 +1,8 @@
+---
+- hosts: my_node
+  become: yes
+  tasks:
+  - name: Hello Jenkins Ansible
+    file:
+      path: /home/vagrant/boom_jenkins
+      state: touch
