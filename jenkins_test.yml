@@ -4,5 +4,8 @@
   tasks:
   - name: Hello Jenkins Ansible
     file:
-      path: /home/vagrant/boom_jenkins
+      path: /home/vagrant/boom_jenkins_2
       state: touch
+    yum:
+      name: cowsay
+      
