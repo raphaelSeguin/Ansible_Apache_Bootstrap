@@ -6,6 +6,9 @@
     file:
       path: /home/vagrant/boom_jenkins_2
       state: touch
-
+  - name: Install Midnight Commander
+    yum:
+      name: mc
+      state: present
 
       
