@@ -6,6 +6,6 @@
     file:
       path: /home/vagrant/boom_jenkins_2
       state: touch
-    yum:
-      name: cowsay
+
+
       
